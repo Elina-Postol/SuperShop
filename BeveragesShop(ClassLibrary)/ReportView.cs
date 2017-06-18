@@ -8,7 +8,7 @@ namespace BeveragesShop_ClassLibrary_ {
     public static class ReportView {
         public static string ShopTypeDescription = "This shop is providing with different kinds of beverages";
         public static string clientslist;
-        
-                    
-                                               }
+     
+
+    }
 }

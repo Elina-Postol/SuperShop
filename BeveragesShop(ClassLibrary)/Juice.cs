@@ -8,8 +8,8 @@ namespace BeveragesShop_ClassLibrary_ {
   public  class Juice: Product{
         public string JuiceName { get; set; }
         public string TradeMark { get; set; }
-        public string ProducerSite { get; set; }
-        public string ProductDescription { get; set; }
+       // public string ProducerSite { get; set; }
+       // public string ProductDescription { get; set; }
        
     }
 }

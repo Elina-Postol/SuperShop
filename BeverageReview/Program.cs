@@ -30,8 +30,13 @@ namespace BeverageReview {
 
             String text = ReportView.ShopTypeDescription;
 
+            Juice juicetoshow = new Juice();
+          Juice juice = juicetoshow.JuiceList();
+
             Console.WriteLine( text);
             Console.WriteLine("Clients that system has at this moment : "+clientslist);
+           Console.WriteLine("Juice name: "+ juice.JuiceName);
+            Console.WriteLine("Juice description: " + juice.Description);
             Console.ReadKey();
         }
     }

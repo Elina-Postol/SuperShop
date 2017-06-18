@@ -8,6 +8,6 @@ namespace BeveragesShop_ClassLibrary_ {
     class Storage {
         public string StorageName { get; set; }
         public string StorageAdress { get; set; }
-
+      
     }
 }
