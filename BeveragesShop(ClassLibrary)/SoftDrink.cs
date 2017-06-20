@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BeveragesShop_ClassLibrary_ {
     class SoftDrink: Product {
+        //public SoftDrink(int productId) : base(productId) {
+       // }
+
         public string SoftDrinkName { get; set; }
         public string TradeMark { get; set; }
         public string ProducerSite { get; set; }

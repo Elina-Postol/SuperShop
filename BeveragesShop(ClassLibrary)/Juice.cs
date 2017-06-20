@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BeveragesShop_ClassLibrary_ {
-  public  class Juice: Product{
+  public  class Juice: Product {
+       // public Juice(int productId) : base(productId) {
+       // }
+
         public string JuiceName { get; set; }
         public string TradeMark { get; set; }
        // public string ProducerSite { get; set; }

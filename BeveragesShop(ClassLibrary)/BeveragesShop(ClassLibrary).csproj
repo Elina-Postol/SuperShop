@@ -40,9 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddProduct.cs" />
+    <Compile Include="EqualsCheck.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DeliveryType .cs" />
+    <Compile Include="Filler.cs" />
     <Compile Include="Juice.cs" />
     <Compile Include="JuiceType.cs" />
     <Compile Include="MineralWater.cs" />

@@ -31,14 +31,46 @@ namespace BeveragesShop_ClassLibrary_ {
             var juicetype = new Juice() {
                 JuiceName = "Sandora",
                 Description = "Apple nectar",
-                ProductType = "juice",
+                ProductType = "Juice",
                 ProductName = "Sandora juice",
                 ProductId = 2
 
             };
             return juicetype;
         }
-    }
-} 
+ 
+
+        public static int InstanceCount { get; set; }
+
+        public static string TypeFinder(string sign) {
+string type = null;
+            
+            
+             sign = sign.ToUpper();
+     
+
+          
+            switch (sign) {
+                case "J":
+              type = "Juice";
+                break;
+                case "M":
+                type = "Mineral water";
+                break;
+                case "S":
+                type = "Soft drink";
+                break;
+               
+            }
+           
+            return  type;
+          
+            
+            } 
+        }  
+       
+    } 
+    
+ 
     
 
