@@ -13,20 +13,7 @@ namespace BeveragesShop_ClassLibrary_ {
         public string Description { get; set; }
         public int CurrentPrice { get; set; }
         public string ProductStorageType { get; set; }
-        // Product product = new Product();
-        //
-
-        // public Product ProductList(int val) {
-
-
-
-        //  product.ProductId = 1;
-        //  product.Descriprion = "Min water";
-        //   product.ProductType = "MineralWater";
-        //   product.ProductName = "new";
-        //   return product;
-        //}
-
+        
         public Juice JuiceList() {
             var juicetype = new Juice() {
                 JuiceName = "Sandora",
@@ -34,25 +21,25 @@ namespace BeveragesShop_ClassLibrary_ {
                 ProductType = "Juice",
                 ProductName = "Sandora juice",
                 ProductId = 2
-
-            };
+                            };
             return juicetype;
         }
- 
-
+        
         public static int InstanceCount { get; set; }
 
         public static string TypeFinder(string sign) {
-string type = null;
-            
-            
-             sign = sign.ToUpper();
-     
-
-          
+            string type = null;
+            sign = sign.ToUpper();
+            bool checkIsFail = false;
+            if (!(String.Equals(sign, "J") || String.Equals(sign, "M") || String.Equals(sign, "S"))) {
+                Console.WriteLine("Please, make CORRECT ('J','M','S') choice - Mineral water(M), Juice(J) or Soft drink(S)");
+                sign= Console.ReadLine();
+                checkIsFail = true;
+            }
+        
             switch (sign) {
                 case "J":
-              type = "Juice";
+                type = "Juice";
                 break;
                 case "M":
                 type = "Mineral water";
@@ -60,17 +47,20 @@ string type = null;
                 case "S":
                 type = "Soft drink";
                 break;
-               
+                         }
+    if (checkIsFail) {
+                 type=TypeFinder(sign);
             }
-           
-            return  type;
-          
-            
-            } 
-        }  
-       
-    } 
-    
- 
-    
+
+            return type;
+
+
+        }
+      
+    }
+
+}
+
+
+
 

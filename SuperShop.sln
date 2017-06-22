@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeveragesShop(ClassLibrary)
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeverageReview", "BeverageReview\BeverageReview.csproj", "{98E5D03B-9B42-4424-A5BA-B505E1453CDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeveragesShop(ClassLibrary)Tests", "BeveragesShop(ClassLibrary)Tests\BeveragesShop(ClassLibrary)Tests.csproj", "{71D8E891-0823-4184-AB79-DD2EFCF1C97C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{98E5D03B-9B42-4424-A5BA-B505E1453CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98E5D03B-9B42-4424-A5BA-B505E1453CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98E5D03B-9B42-4424-A5BA-B505E1453CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D8E891-0823-4184-AB79-DD2EFCF1C97C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D8E891-0823-4184-AB79-DD2EFCF1C97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D8E891-0823-4184-AB79-DD2EFCF1C97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D8E891-0823-4184-AB79-DD2EFCF1C97C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
