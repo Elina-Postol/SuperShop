@@ -5,15 +5,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BeveragesShop_ClassLibrary_;
+using System.ComponentModel;
+using System.Collections;
 
 
 namespace BeverageReview {
     class Program {
-
+      
         public static string productname = "new";
 
         static void Main(string[] args) {
 
+            Console.WriteLine("Login:"); 
+            var UserName= Console.ReadLine();
+            Console.WriteLine("Password:");
+            var userPassword=Console.ReadLine();
+            User user = new User();
+            if (!user.Login(UserName, userPassword) ){
+                Console.WriteLine("LoginFailes.");
+                Console.ReadKey();
+                System.Environment.Exit(-1);
+            }
+            Product stuff = new Product();
+
+                  StoreWarehouse  warehouse = new StoreWarehouse();
+            warehouse.ProcessConveyor();
+            warehouse.AllProductsAdd();
+            warehouse.CreateProduct("Juice");
+            warehouse.ReadProduct("Mineral Water");
+            warehouse.UpdateProduct("Soft Drink", "Cola");
+            warehouse.DeleteProduct("Soft Drink", "Cola");
+            warehouse.SearchToFindJuiceInfo("Apple");
+
+            warehouse.SearchToFidMineralWaterInfo("Morshinska");
+            warehouse.SearchToFindSoftDrinkInfo("Pepsi");
+                   
+           
+
+            IProduct iproduct = new Product();
+     
             Filler.AddSetOfProduct();
             int ix = 0;
             string userrespond;
@@ -40,8 +70,8 @@ namespace BeverageReview {
                 description = Console.ReadLine();
                 Console.WriteLine("Please input product current price: ");
                 currentprice = Console.ReadLine();
-                AddOrCreateProduct createProduct = new AddOrCreateProduct();
-                var productList = createProduct.Create(productname, productype, description, currentprice);
+               
+                var productList = iproduct.Create(productname, productype, description, currentprice);
                 Console.WriteLine("The List of Product is now next:" + productList);
 
                 break;
@@ -50,16 +80,15 @@ namespace BeverageReview {
                 // Find items according to type
                 Console.WriteLine("Please select type of product you want to inspect: : Mineral water(M), Juice(J) or Soft drink(S) ? (just type the first symbol) ");
                 productype = Console.ReadLine();
-                productype = Product.TypeFinder(productype);
-                GetInfoAboutProduct getInfo = new GetInfoAboutProduct();
-                var selectedList = getInfo.Read(productype);
+                productype = iproduct.TypeFinder(productype);
+        
+                var selectedList = iproduct.Read(productype);
                 Console.WriteLine("The List of selected product type is next:" + selectedList);
 
                 break;
 
                 case "U":
-                UpdateOfProduct updateProduct = new UpdateOfProduct();
-                updateProduct.Update();
+                    iproduct.Update();
                 break;
 
                 case "D":
@@ -71,15 +100,25 @@ namespace BeverageReview {
                 }
 
                 Console.WriteLine("Please select from the list a product you want to delete(use it number) : ");
-                if (String.IsNullOrEmpty(Console.ReadLine())) { throw new ArgumentException("Selected row number can't be empty."); }
+               // if (String.IsNullOrEmpty(Console.ReadLine())) { throw new ArgumentException("Selected row number can't be empty."); }
                 id = System.Convert.ToInt32(Console.ReadLine());
-
-                DeleteProduct deleterow = new DeleteProduct();
-                string deletedRow = deleterow.DeleteRow(id);
+                            string deletedRow = iproduct.DeleteRow(id);
                 break;
-            }
 
-            Console.ReadKey();
+             
+            }
+           
+            StringBuilder sb = new StringBuilder();
+                sb.AppendFormat("{0} ", "User with next login name: ");
+                sb.AppendFormat("{0} ",UserName);
+                sb.AppendFormat("{0} ", "has next activity: ");
+            foreach (var log in UserLog.loggingdata)
+                sb.AppendFormat("{0} ", log);
+           
+              Console.WriteLine(sb);
+             Console.ReadKey();
+
+         
         }
 
     }

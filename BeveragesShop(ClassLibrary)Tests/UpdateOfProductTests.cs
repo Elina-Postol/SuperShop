@@ -11,6 +11,7 @@ namespace BeveragesShop_ClassLibrary_.Tests {
     public class UpdateOfProductTests {
         [TestMethod()]
         public void UpdateTest() {
+            IProduct iproduct = new Product();
             Filler.AddSetOfProduct();
             int id = 1;
             string newname = "TEST";
@@ -18,7 +19,7 @@ namespace BeveragesShop_ClassLibrary_.Tests {
             string type = "Juice";
             int newprice = 100;
             string expectedRow = String.Concat(newname, type,descrip, newprice);
-            string updateRow = UpdateOfProduct.UpdateOfRow(id, newname, descrip, newprice);
+            string updateRow = iproduct.UpdateOfRow(id, newname, descrip, newprice);
 
             Assert.AreEqual(expectedRow, updateRow);
             

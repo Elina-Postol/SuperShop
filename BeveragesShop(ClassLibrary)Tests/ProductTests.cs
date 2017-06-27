@@ -11,18 +11,12 @@ namespace BeveragesShop_ClassLibrary_.Tests {
     public class ProductTests {
         [TestMethod()]
         public void TypeFinderTest() {
+            IProduct iproduct = new Product();
             string type = "S";
             string expected = "Soft drink";
-            var actual =Product.TypeFinder(type);
+            var actual =iproduct.TypeFinder(type);
             Assert.AreEqual(expected,actual);
                 }
-
-       // [TestMethod()]
-      //  public void TypeFinderTestOfWrongInput() {
-       //     string type = "S ";
-       //     string expected = null;
-      //      var actual = Product.TypeFinder(type);
-       //     Assert.AreEqual(expected, actual);
-      //  }
+               
     }
 }

@@ -11,14 +11,15 @@ namespace BeveragesShop_ClassLibrary_.Tests {
     public class DeleteProductTests {
         [TestMethod()]
         public void DeleteRowTest() {
+
             Filler.AddSetOfProduct();
+            IProduct iproduct = new Product();
             int id = 1;
             var row = Filler.products[id];
 
             string expectedRow = row.ProductName + " " + row.Description + " " + row.ProductType + " " + row.CurrentPrice;
 
-            DeleteProduct deleteRow = new DeleteProduct();
-            string updateRow = deleteRow.DeleteRow(id);
+            string updateRow = iproduct.DeleteRow(id);
 
             Assert.AreEqual(expectedRow, updateRow);
         }

@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrCreateProduct.cs" />
-    <Compile Include="DeleteProduct.cs" />
+    <Compile Include="Conveyor.cs" />
     <Compile Include="EqualsCheck.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DeliveryType .cs" />
     <Compile Include="Filler.cs" />
-    <Compile Include="GetInfoAboutProduct.cs" />
+    <Compile Include="IConveyor.cs" />
+    <Compile Include="ISearchProduct.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="IProduct.cs" />
     <Compile Include="Juice.cs" />
     <Compile Include="JuiceType.cs" />
     <Compile Include="MineralWater.cs" />
@@ -60,7 +62,9 @@
     <Compile Include="ShopStaff.cs" />
     <Compile Include="SoftDrink.cs" />
     <Compile Include="Storage.cs" />
-    <Compile Include="UpdateOfProduct.cs" />
+    <Compile Include="StoreWarehouse.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserLog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

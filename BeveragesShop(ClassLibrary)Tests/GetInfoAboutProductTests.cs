@@ -12,9 +12,9 @@ namespace BeveragesShop_ClassLibrary_.Tests {
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void EmptyProductTypeOnReadTest() {
-            GetInfoAboutProduct selectedList = new GetInfoAboutProduct();
+            IProduct iproduct = new Product();
             string type = "";
-            try { selectedList.Read(type); }
+            try { iproduct.Read(type); }
               catch (Exception ex) { 
                 Assert.AreEqual("Product Type can't be null or empty.", ex.Message);
                 throw;

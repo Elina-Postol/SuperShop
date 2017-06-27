@@ -27,7 +27,9 @@ namespace BeveragesShop_ClassLibrary_ {
             products.Add(new Product() { ProductName = "Sprite", Description = "classic", ProductType = "Soft drink", CurrentPrice = 19 });
             products.Add(new Product() { ProductName = "Fanta", Description = "with lemon", ProductType = "Soft drink", CurrentPrice = 21 });
             products.Add(new Product() { ProductName = "Cola", Description = "cherry", ProductType = "Soft drink", CurrentPrice = 32 });
-       
+
+          
+
 
         }
 
