@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeveragesShop_ClassLibrary_  {
-    public class Product :IProduct{
+namespace BeveragesShop_ClassLibrary_ {
+    public class Product : IProduct {
         private string v;
-  
+
         public Product(string v) {
             this.v = v;
         }
 
         public Product() {
-           // this.ToString();
+            // this.ToString();
         }
 
         public int ProductId { get; private set; }
@@ -24,8 +24,8 @@ namespace BeveragesShop_ClassLibrary_  {
         public string ProductStorageType { get; set; }
 
 
-       string IProduct.TypeFinder(string sign) {
-                 string type = null;
+        string IProduct.TypeFinder(string sign) {
+            string type = null;
             sign = sign.ToUpper();
             IProduct findType = new Product();
             bool checkIsFail = false;
@@ -52,8 +52,8 @@ namespace BeveragesShop_ClassLibrary_  {
             return type;
         }
 
-      string IProduct.DeleteRow(int id) {
-       UserLog.Log("Function DELETE item called; ");
+        string IProduct.DeleteRow(int id) {
+            UserLog.Log("Function DELETE item called; ");
             string deletedRow = "";
             int ix = 0;
             Product item = Filler.GetRowFromList(id);
@@ -70,7 +70,7 @@ namespace BeveragesShop_ClassLibrary_  {
             return deletedRow;
         }
 
-  void IProduct.Update() {
+        void IProduct.Update() {
             UserLog.Log("Function UPDATE item called; ");
             int ix = 0;
             string updatedrow = " ";
@@ -120,7 +120,7 @@ namespace BeveragesShop_ClassLibrary_  {
             string updatedRow = String.Concat(Filler.products[id].ProductName, Filler.products[id].ProductType, Filler.products[id].Description, Filler.products[id].CurrentPrice);
             return updatedRow;
         }
-       string IProduct.Read(string productType) {
+        string IProduct.Read(string productType) {
             UserLog.Log("Function READ item called; ");
             string selectedData = "";
             if (String.IsNullOrEmpty(productType)) { throw new ArgumentException("Product Type can't be null or empty."); }
@@ -134,7 +134,7 @@ namespace BeveragesShop_ClassLibrary_  {
             }
             return selectedData;
         }
-         string IProduct.Create (string productName, string productType, string description, string currentPrice) {
+        string IProduct.Create(string productName, string productType, string description, string currentPrice) {
             UserLog.Log("Function CREATE item called; ");
             string newrow = " ";
             bool checkIsFail = false;
@@ -162,8 +162,13 @@ namespace BeveragesShop_ClassLibrary_  {
             }
             productType = iproduct.TypeFinder(productType);
             int price = int.Parse(currentPrice);
-            Filler.products.Add(new Product() { ProductName = productName, Description = description, ProductType = productType, CurrentPrice = price });
-            // Filler.AddSetOfProduct();
+            if (Filler.products.Capacity < 17) {
+                Filler.products.Add(new Product() { ProductName = productName, Description = description, ProductType = productType, CurrentPrice = price });
+            } else {
+                Console.WriteLine("There is no space to add new product. Capacity amount has been already reached.");
+                Console.ReadKey();
+                System.Environment.Exit(-1);
+            }
             foreach (Product product in Filler.products) {
                 newrow += (product.ProductName + " " + product.Description + " " + product.ProductType + " " + product.CurrentPrice + System.Environment.NewLine);
             }

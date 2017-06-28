@@ -11,7 +11,7 @@ namespace BeveragesShop_ClassLibrary_ {
         public Dictionary<string, string> productType = new Dictionary<string, string>();
         public List<Juice> juiceList = new List<Juice>();
         public Queue<Juice> jj = new Queue<Juice>();
-
+    
         public List<SoftDrink> softdrink = new List<SoftDrink>();
         public List<MineralWater> minwater = new List<MineralWater>();
         Product product = new Product();
@@ -31,6 +31,7 @@ namespace BeveragesShop_ClassLibrary_ {
 
         public string CreateProduct(string typeOfProduct) {
             UserLog.Log("Function CREATE warehouse item called; ");
+          
             string newproduct = "";
             string tradeMark = "";
             string productName = "";
@@ -234,7 +235,7 @@ namespace BeveragesShop_ClassLibrary_ {
             for (int i = 0; i < 6; i++) {
              juice = new Juice(name[i], tr[i], productname[i]);
                 conv.Push(juice);
-    
+                Console.WriteLine(juice);
             }
                   
         Console.WriteLine ("Conveyor data PULL: ");
